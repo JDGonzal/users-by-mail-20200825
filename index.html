@@ -1,33 +1,65 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>Firebase App</title>
-    <link rel="stylesheet" href="lib/style.css">
 
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <title>Firebase App</title>
+  <link rel="stylesheet" href="lib/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
 
-  <body onload="checkUserState()">
-    <h2>Area de Registro</h2>
-    <input type="email" id="email" placeholder="username@server.dom" />
-    <input type="password" id="pass" placeholder="password" />
-    <button onclick="send()">Registro</button>
-    <h2>Area de Acceso</h2>
-    <input type="email" id="emailL" placeholder="username@server.dom" />
-    <input type="password" id="passL" placeholder="password" />
-    <button onclick="login()">Login</button>    
-    
-    <h3 id="loggedin"></h3>
+</head>
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
-    <script src="lib/script.js"></script>
-  </body>
+<body onload="checkUserState()">
+  <div class="container">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Navbar</a>
+      <div class="form-inline">
+        <div class="custom-control custom-checkbox my-1 mr-sm-2">
+          <input type="checkbox" data-toggle="toggle" data-on="Registro" data-off="Login" id="registryLogin">
+        </div>
+        <div id="registryArea">
+          <input type="email" id="emailR" placeholder="username@server.dom" class="form-control mr-sm-2" />
+          <input type="password" id="passR" placeholder="password" class="form-control mr-sm-2" />
+          <button onclick="send()" class="btn btn-outline-success my-2 my-sm-0">Registro</button>
+          <!-- input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"-->
+          <!-- button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search<-- /button-->
+        </div>
+        <div id="loginArea" style="display: none;">
+          <input type="email" id="email" placeholder="username@server.dom" class="form-control mr-sm-2" />
+          <input type="password" id="pass" placeholder="password" class="form-control mr-sm-2" />
+          <button onclick="login()" class="btn btn-outline-success my-2 my-sm-0">Login</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="alert alert-primary" role="alert">
+      <span id="loggedin"></span>
+    </div>
+        
+  </div>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <script src="lib/script.js"></script>  
+</body>
+
 </html>
